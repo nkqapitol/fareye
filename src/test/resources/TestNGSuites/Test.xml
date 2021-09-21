@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing">
+
+    <parameter name="browser" value="chrome" />
+    <parameter name="runLocally" value="true" />
+    <parameter name="geckoDriverPath" value="webdrivers/geckodriver" />
+    <parameter name="chromeDriverPath" value="webdrivers/chromedriver" />
+    <parameter name="mobileRequired" value="false" />
+    <parameter name="browserSSLRequired" value="false" />
+
+    <listeners>
+        <listener class-name="com.fareye.qa.core.analyzer.CustomTestNGReporter"/>
+        <listener class-name="com.fareye.qa.core.FarEyeCoreListener" />
+    </listeners>
+
+    <test thread-count="1" name="Test">
+        <classes>
+            <class name="com.fareye.integration.e2e.RegisterModuleTest" />
+        </classes>
+    </test>
+</suite>
